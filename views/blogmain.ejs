@@ -24,8 +24,13 @@
 </nav>
 
 	<h1><%= data.title %></h1>
-	<% var arr = data.body.split("\n\n"); %>
+	<% var arr = data.body.split("\r\n"); %>
+
 		<%for(var i=0; i < arr.length; i++){ %>
+		<% console.log(arr); %>
+		<% if(arr[i]==="\r" || arr[i]==="\n" || arr[i] == ""){ %> 
+		<%	continue; %>
+		<% } %>
 		 <p><%= arr[i]; %> </p>
 	<% } %>
 <!---	<p style="max-width: 100%;"><%= data.body %><p> -->

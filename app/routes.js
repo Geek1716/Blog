@@ -21,18 +21,30 @@ module.exports = function(app,blog){
 	});
 
 	app.post('/upload',function(req,res){
-		var toUpload = new blog();
-		toUpload.title = req.body.title;
-		toUpload.body = req.body.body;
-		toUpload.save(function(err){
+
+		blog.findOne({title: req.body.title},function(err,data){
 			if(err)
-				console.log(err);
+				throw err;
+			if(data){
+				res.render("error",{data: data});
+			}else{
+				var toUpload = new blog();
+				toUpload.title = req.body.title;
+				toUpload.body = req.body.body;
+				toUpload.save(function(err){
+			if(err)
+				throw err;
 			else{
 				console.log("User saved");
 			}
 
 		});
-		res.redirect('/home');
+				res.redirect('/home');
+			}
+		});
+
+		
+		
 	});
 
 	app.get('/blog/:title',function(req,res){

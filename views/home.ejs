@@ -26,7 +26,7 @@
 
 <h1>Select from the following list of blogs: </h1>
 <ul class="list-group" style="width: 60%;margin-left: 20%;text-align: center;color:black;font-size: 30px;">
-  <% for(var i = 0;i<data.length; i++){ %>
+  <% for(var i = 0;i< data.length; i++){ %>
   <li class="list-group-item" ><a href="/blog/<%= data[i].title %>"><%= data[i].title %></a></li>
   <% } %>
 </ul>

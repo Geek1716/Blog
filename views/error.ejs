@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Already Exists</title>
+
+	<link rel="stylesheet" type="text/css" href="/public/error.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<h1>A blog with title <strong><i>"<%= data.title %>"</i></strong> already exists! Please try again.</h1>
+	<div id="buttons">
+		<a href="/home"><button type="button" class="btn btn-success">Home</button></a>
+		<a href="/upload"><button type="button" class="btn btn-success">Upload</button></a>
+	</div>
+</body>
+</html>
