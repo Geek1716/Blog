@@ -1,0 +1,38 @@
+body{
+	background-color:  #00e699 !important;
+	color: 	 white !important;
+	font-family: 'Josefin Sans', verdana !important;
+	text-decoration: 2px white !important;
+	text-align: center !important;
+}
+
+h1{
+	padding: 25px !important;
+	font-size: 45px !important;
+}
+
+h2{
+	text-align: center;
+	padding: 15px !important;
+	font-size: 50px !important;
+}
+
+p{
+	font-size: 45px !important;
+	text-decoration: bold !important;
+	text-align: center !important;
+	text-decoration: 2px white !important;
+}
+
+form{
+	text-align: center;
+}
+
+navbar{
+	background-color: #606060 !important;
+}
+
+li.list-group-item:hover{
+	font-size: 33px !important;
+	background-color:  #e6ffff !important;
+}

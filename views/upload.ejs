@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+	<link rel="stylesheet" type="text/css" href="/public/upload.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+</head>
+<body>
+		<nav class="navbar navbar-default">
+  <div class="container-fluid" style="font-size: 23px;">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="font-size: 24px;">Blog</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/home">Home</a></li>
+      <li  class="active"><a href="/upload">Upload</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+</nav>
+	<h2>Create an awesome blog...</h2>
+	<form method="POST" action="/upload">
+	<div class="form-group">
+		<p><u>Title</u></p>
+		<input class="form-control" id="tite" type="text" name="title" style="width: 60%;margin-left:20%;font-size: 25px;"><br>
+	</div>
+	<div class="form-group" >
+		<p><u>What do you wanna write about today?</u></p>
+		<textarea class="form-control input-lg" id="inputlg" rows="5" cols="100"  type="text" name="body" style="width: 60%;margin-left: 20%;height: 200px;"></textarea><br><br><br>
+	</div>
+		<input class="btn btn-default" type="submit" value="Upload" style="font-size: 30px;background-color: lightgreen;color:white;margin-bottom: 25px;">
+	</form>
+	<script type="text/javascript">
+		if(document.getElementById("title").value==null)
+			alert("No title");
+	</script>
+
+</body>
+</html>

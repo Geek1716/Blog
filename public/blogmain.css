@@ -1,0 +1,32 @@
+body{
+	background-color:  #b3ffff !important;
+	color: 	 #666666 !important;
+	font-family: 'Josefin Sans', verdana !important;
+	text-decoration: 2px white !important;
+	text-align: center !important;
+}
+
+h1{
+	padding: 25px !important;
+	font-size: 45px !important;
+}
+
+h2{
+	text-align: center;
+	padding: 15px !important;
+	font-size: 50px !important;
+}
+
+p{
+	font-size: 25px !important;
+	text-decoration: bold !important;
+	text-align: left !important;
+	text-decoration: 2px white !important;
+	padding: 25px;
+	color: black;
+}
+
+form{
+	text-align: center;
+}
+
