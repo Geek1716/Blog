@@ -17,7 +17,7 @@ app.use('/public',express.static(__dirname+'/public'));
 routes(app,blog);
 
 
-blog.find({},function(err,data){
+/*blog.find({},function(err,data){
 	for(var i=0; i< data.length; i++){
 		if(data[i].body==""){
 			blog.deleteOne({title: data[i].title},function(err){
@@ -29,7 +29,7 @@ blog.find({},function(err,data){
 		}
 	}
 		
-});
+});*/
 
 app.listen(port);
 console.log("The server is running on port "+port);
