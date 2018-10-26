@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function load(){
+			var http = new XMLHttpRequest();
+
+		http.readystatechange = function(){
+			if(this.readystate == 4 && this.status == 200){
+				console.log(this.responseText);
+			}
+		}
+		http.open("GET","/upload",true);
+		http.send();
+		}
+
+		load();
+	</script>
+	
+
+</body>
+</html>

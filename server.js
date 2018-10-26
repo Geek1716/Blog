@@ -7,6 +7,7 @@ var blog = require('./app/models/blogs');
 var port = 3000;
 var routes = require('./app/routes');
 
+
 mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 app.set('view engine','ejs');
@@ -16,17 +17,19 @@ app.use('/public',express.static(__dirname+'/public'));
 routes(app,blog);
 
 
-/*blog.find({},function(err,data){
+blog.find({},function(err,data){
 	for(var i=0; i< data.length; i++){
-		blog.deleteOne({title: data[i].title},function(err){
+		if(data[i].body==""){
+			blog.deleteOne({title: data[i].title},function(err){
 			if(err)
 				console.log(err);
 			else
 				console.log("Deleted");
 		});
+		}
 	}
 		
-});*/	
+});
 
 app.listen(port);
 console.log("The server is running on port "+port);

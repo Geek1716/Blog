@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html">
 <head>
 	<title>
 		Blog
 	</title>
+  
 	<link rel="stylesheet" type="text/css" href="/public/home.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 </head>
 <body>
+  <div id="body">
 	<nav class="navbar navbar-default">
   <div class="container-fluid" style="font-size: 23px;">
     <div class="navbar-header">
@@ -25,10 +27,38 @@
 </nav>
 
 <h1>Select from the following list of blogs: </h1>
+<% if(data.length==0){ %>
+    <p style="color: #4d4d4d; padding: 40px; font-size: 35px !important;"> NO BLOGS TO DISPLAY RIGHT NOW. PLEASE CLICK ON THE UPLOAD TAB TO UPLOAD A BLOG </p>
+<% }else{ %>
 <ul class="list-group" style="width: 60%;margin-left: 20%;text-align: center;color:black;font-size: 30px;">
   <% for(var i = 0;i< data.length; i++){ %>
   <li class="list-group-item" ><a href="/blog/<%= data[i].title %>"><%= data[i].title %></a></li>
   <% } %>
 </ul>
+<% } %>
+
+<!-- Testing AJAX -->
+ <!-- <div id="buttons">
+    <button type="button" class="btn btn-success" onclick="func();">SUBMIT</button></a>
+ 
+  </div>
+<p id="ajax"></p>
+<script type="text/javascript">
+
+  function func(){
+    var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     console.log(this.responseText);
+     document.getElementById("ajax").innerHTML = this.responseText;
+    }
+ };
+
+ xhttp.open("GET","/upload",true);
+ xhttp.send();
+  }
+
+</script>  -->
+</div>
 </body>
 </html>

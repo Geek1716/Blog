@@ -1,4 +1,15 @@
+
 body{
+	background-color: #d9d9d9 !important;
+}
+
+
+#body{
+
+	width: 70% !important;
+	height: 100vh !important;
+	margin-left: 15%;
+	background-color:  #00e699 !important;
 	background-color:  #b3ffff !important;
 	color: 	 #666666 !important;
 	font-family: 'Josefin Sans', verdana !important;

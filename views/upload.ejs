@@ -9,7 +9,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
 	<script type="text/javascript">
-		function test(){
+		
+		function func(){
+			console.log("This is what happens when you click a submit button.....");
+		}
+
+		function validate(){
+			//console.log("callback fired")
 			var title = document.getElementById("title").value;
 			var body = document.getElementById("inputlg").value;
 			if(!title || !body){
@@ -18,12 +24,45 @@
 				return false;
 
 		}
-			}
+
+			var title = document.getElementById("title").value;
+			var xHTTP = new XMLHttpRequest();
+			console.log(xHTTP.responseText);
+			xHTTP.onreadystatechange = function(){
+				if(this.readyState==4 && this.status==200){
+					var data = JSON.parse(this.responseText);
+					if(data.success==false){
+						val = false;
+						document.getElementById("msg").innerHTML = 'A blog with title <a href="/blog/'+title+'" id="err">'+title+'</a> already exists! Please change the title and try again.' 
+						
+					}
+					
+				}
+				//return val;		
+			};
+		
+			xHTTP.open('GET','/validate/'+title,false);
+			xHTTP.send();
+
+			/*function state(){
+				if(xHTTP.responseText!= "")
+					return true;
+				else
+					return false;
+			}*/
+
+
+			return val;	
+		}
+
 	</script>
 
 
 </head>
 <body>
+
+	<div id="body">
+
 		<nav class="navbar navbar-default">
   <div class="container-fluid" style="font-size: 23px;">
     <div class="navbar-header">
@@ -37,7 +76,8 @@
   </div>
 </nav>
 	<h2>Create an awesome blog...</h2>
-	<form method="POST" action="/upload" id="myform" onsubmit="return test();">
+	<p id="msg"></p>
+	<form method="POST" action="/upload" id="myform" onsubmit="return validate();">
 	<div class="form-group">
 		<p><u>Title</u></p>
 		<input class="form-control" id="title" type="text" name="title" style="width: 60%;margin-left:20%;font-size: 25px;"><br>
@@ -46,8 +86,9 @@
 		<p><u>What do you wanna write about today?</u></p>
 		<textarea class="form-control input-lg" id="inputlg" rows="5" cols="100"  type="text" name="body" style="width: 60%;margin-left: 20%;height: 200px;"></textarea><br><br><br>
 	</div>
-		<input class="btn btn-default" type="submit" value="Upload" style="font-size: 30px;background-color: lightgreen;color:white;margin-bottom: 25px;">
+		<input class="btn btn-default" type="submit" value="Upload" style="font-size: 30px;background-color: lightgreen;color:white;margin-bottom: 25px;position: relative;">
 	</form>
 	
+</div>
 </body>
 </html>

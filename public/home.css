@@ -1,9 +1,17 @@
 body{
+	background-color:  #d9d9d9 !important;
+}
+
+#body{
+	width: 70% !important;
+	height: 100vh !important;
 	background-color:  #00e699 !important;
 	color: 	 white !important;
 	font-family: 'Josefin Sans', verdana !important;
 	text-decoration: 2px white !important;
 	text-align: center !important;
+	margin-left: 15% !important;
+
 }
 
 h1{

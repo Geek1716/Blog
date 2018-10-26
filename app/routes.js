@@ -8,16 +8,18 @@ module.exports = function(app,blog){
 	//console.log(blog);
 	app.get('/home',function(req,res){
 		blog.find({},function(err,data){
-			if(!data)
+			if(data.length==0)
 				console.log("NO data found");
-			else{	
+			
+		//	console.log(res);	
 			res.render('home',{data:data});
-		}
+		
 		});		
 	});
 
 	app.get('/upload',function(req,res){
 		res.render('upload.ejs');
+		//res.send("This is a sample text....");
 	});
 
 	app.post('/upload',function(req,res){
@@ -43,8 +45,8 @@ module.exports = function(app,blog){
 			}
 		});
 
-		
-		
+	
+	
 	});
 
 	app.get('/blog/:title',function(req,res){
@@ -54,8 +56,21 @@ module.exports = function(app,blog){
 			if(!data)
 				console.log("data not found");
 			else
-				console.log(data.body);
+				//console.log(data.body);
 				res.render('blogmain',{data:data});
 		})
 	});
+
+
+	app.get('/validate/:title',function(req,res){
+		blog.findOne({title: req.params.title},function(err,data){
+			if(data==null)
+				res.send({success: true});
+			else
+				res.send({success: false});
+		});
+
+		//res.send("false");
+	});
+
 }

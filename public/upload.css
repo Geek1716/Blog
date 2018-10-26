@@ -1,4 +1,12 @@
 body{
+	background-color:  #d9d9d9 !important;
+}
+
+#body{
+
+	width: 70% !important; 
+	height: 100% !important;
+	margin-left: 15% !important;
 	background-color:  #00e699 !important;
 	color: 	 white !important;
 	font-family: 'Josefin Sans', verdana !important;
@@ -21,3 +29,11 @@ form{
 	text-align: center;
 }
 
+#msg{
+	color: red !important; 
+	font-size: 25px !important;
+}
+
+#err{
+	color: red !important;
+}
